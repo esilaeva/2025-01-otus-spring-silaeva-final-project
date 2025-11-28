@@ -29,8 +29,7 @@ target/
 target/site/
 **/jacoco.exec
 **/surefire-reports/
-**/jacoco/ 
-*.xml
+**/jacoco/
 *.csv
 *.html
 *.gif

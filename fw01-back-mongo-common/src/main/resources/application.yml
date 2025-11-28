@@ -5,7 +5,7 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
-      port: 27017
+      port: 0
       database: dictionary-db
 
   grpc:

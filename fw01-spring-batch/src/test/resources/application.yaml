@@ -12,7 +12,7 @@ spring:
 mongock:
   transactional: false
   enabled: true
-  migration-scan-package: ru.otus.hw.data
+  migration-scan-package: ru.otus.hw.testdb
   track-repository: true
   fail-fast: true
   lock:

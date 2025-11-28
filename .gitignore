@@ -206,7 +206,6 @@ e2e/*.map
 
 # Application Data
 # ================
-data/
 temp/
 tmp/
 
