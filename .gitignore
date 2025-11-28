@@ -1,0 +1,284 @@
+# Git Ignore File for Java/Maven/Docker Project
+# =============================================
+# This file prevents accidental commit of sensitive files and build artifacts
+
+# Maven
+# =====
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Environment Files (CONTAIN SECRETS!)
+# ====================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env
+secrets/
+private/
+
+# IDE and Editor Files
+# ====================
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+
+# Java
+# ====
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# hs_err_pid*
+replay_pid*
+
+# Operating System Files
+# ======================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Gradle
+# ======
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Eclipse
+# =======
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# NetBeans
+# ========
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Docker
+# ======
+docker-compose.override.yml
+.dockerignore  # Keep this file but ignore actual .dockerignore
+
+# SSL Certificates and Private Keys (HIGHLY SENSITIVE!)
+# ====================================================
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+certificates/private/
+**/private/
+server.jks
+server-truststore.jks
+truststore.jks
+keystore.*
+
+# Database
+# ========
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+*.mv.db
+
+# Logs
+# =====
+*.log
+logs/
+log/
+
+# Temporary Files
+# ===============
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.zip
+*~
+
+# Node.js (if using for any tooling)
+# ==================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if using for any scripting)
+# ===================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Other Development Tools
+# =======================
+*.pid
+*.seed
+*.pid.lock
+.nyc_output
+coverage/
+.coverage
+.pytest_cache/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Application Specific
+# ====================
+*.pid
+*.seed
+*.pid.lock
+.lib/
+.sass-cache/
+connect.lock
+typings/
+e2e/*.js
+e2e/*.map
+.eslintcache
+.stylelintcache
+
+# Security and Backup Files
+# =========================
+*.backup
+*.bak
+*.orig
+*.save
+*.old
+*.zip
+*.gz
+*.tar
+*.rar
+
+# Application Data
+# ================
+data/
+temp/
+tmp/
+
+# Performance and Monitoring
+# ==========================
+perf.data*
+*-perf.data
+
+# Checkstyle (local checkstyle config)
+# ====================================
+checkstyle-cachefile
+checkstyle-result.xml
+
+# Spring Boot
+# ===========
+HELP.md
+.gradle
+build/
+!gradle/wrapper
+!gradle.properties
+**/src/main/**/build/
+!**/src/test/**/build/
+
+# Operating System
+# ================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+# ====
+*.iws
+/out/
+.idea/
+*.ipr
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/dictionaries
+.idea/libraries
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Certificates and Keys
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+private/
+
+# Important Notes:
+# 1. Always review before committing
+# 2. Never commit environment files with real credentials
+# 3. Use external secret management in production
+# 4. Rotate secrets regularly
+# 5. Different environments should use different secrets
