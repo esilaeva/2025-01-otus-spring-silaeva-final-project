@@ -1,0 +1,46 @@
+services:
+  mongodb:
+    image: mongo:8.0.3
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=dic-reactive-db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 5s
+      timeout: 2s
+      retries: 10
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-backend
+    container_name: backend-service
+    ports:
+      - "9090:9090"
+    environment:
+      - CERTIFICATE_PASSWORD=${CERTIFICATE_PASSWORD}
+      - SPRING_DATA_MONGODB_HOST=mongodb
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=dic-reactive-db
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
+    container_name: frontend-service
+    environment:
+      - CERTIFICATE_PASSWORD=${CERTIFICATE_PASSWORD}
+      - TELEGRAM_BOT_USERNAME=${TELEGRAM_BOT_USERNAME}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_BOT_WEBHOOK_URL=${TELEGRAM_BOT_WEBHOOK_URL}
+    depends_on:
+      backend:
+        condition: service_started
+    restart: unless-stopped

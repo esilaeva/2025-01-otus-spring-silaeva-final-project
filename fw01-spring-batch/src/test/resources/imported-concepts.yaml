@@ -1,0 +1,76 @@
+concepts:
+  - topics:
+      - name: Глаголы
+        description: Часто используемые глаголы
+    words:
+      - language: ru
+        text: Брать/Покупать
+        partOfSpeech: verb
+        comment: ""
+        audioUrl: ""
+      - language: he
+        text: לָקַחַת
+        partOfSpeech: verb
+        comment: Pa'al
+        audioUrl: ""
+    comment: ""
+  - topics:
+      - name: Глаголы
+        description: Часто используемые глаголы
+    words:
+      - language: ru
+        text: Сидеть
+        partOfSpeech: verb
+        comment: ""
+        audioUrl: ""
+      - language: he
+        text: לָשֶׁבֶת
+        partOfSpeech: verb
+        comment: Pa'al
+        audioUrl: ""
+    comment: ""
+  - topics:
+      - name: Глаголы
+        description: Часто используемые глаголы
+    words:
+      - language: ru
+        text: Стоять
+        partOfSpeech: verb
+        comment: ""
+        audioUrl: ""
+      - language: he
+        text: לַעֲמֹד
+        partOfSpeech: verb
+        comment: Pa'al
+        audioUrl: ""
+    comment: ""
+  - topics:
+      - name: Глаголы
+        description: Часто используемые глаголы
+    words:
+      - language: ru
+        text: Подниматься
+        partOfSpeech: verb
+        comment: ""
+        audioUrl: ""
+      - language: he
+        text: לַעֲלוֹת
+        partOfSpeech: verb
+        comment: Pa'al
+        audioUrl: ""
+    comment: ""
+  - topics:
+      - name: Глаголы
+        description: Часто используемые глаголы
+    words:
+      - language: ru
+        text: Пробовать
+        partOfSpeech: verb
+        comment: ""
+        audioUrl: ""
+      - language: he
+        text: לְנַסוֹת
+        partOfSpeech: verb
+        comment: Pi'el
+        audioUrl: ""
+    comment: ""

@@ -1,0 +1,129 @@
+# Docker Build Context Ignore File
+# ================================
+# This file prevents sensitive files from being included in Docker builds
+# Add this to your project root as .dockerignore
+
+# Version Control
+# ===============
+.git
+.gitignore
+.gitattributes
+
+# Environment Files (contain secrets!)
+# ====================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env
+
+# IDE and Editor Files
+# ====================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+# ======================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build Artifacts
+# ===============
+target/
+*.jar.original
+*.jar.packaged
+
+# Logs
+# =====
+*.log
+logs/
+*.log.*
+
+# Runtime Data
+# ============
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage Directory
+# ==================
+coverage/
+.nyc_output
+
+# Dependency Directories
+# ======================
+node_modules/
+.npm
+.yarn-cache
+
+# Secret and Certificate Files (sensitive!)
+# =========================================
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+secrets/
+certificates/private/
+*.private
+
+# Temporary Files
+# ===============
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Test Files
+# ==========
+src/test/
+**/test/
+**/*Test.java
+**/*Tests.java
+
+# Documentation
+# =============
+*.md
+README.md
+docs/
+
+# Database Files
+# ==============
+*.db
+*.sqlite
+*.sqlite3
+
+# Package Files
+# =============
+*.tar
+*.tar.gz
+*.zip
+*.rar
+
+# Maven
+# =====
+.mvn/
+mvnw
+mvnw.cmd
+
+# Other
+# =====
+*.xml.bak
+*.yml.bak
+docker-compose.override.yml
+
+# Security Note:
+# This .dockerignore ensures that sensitive files like environment variables,
+# private keys, certificates, and configuration files with passwords are not
+# accidentally included in the Docker build context, which could expose secrets
+# in the final image layers.

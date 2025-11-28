@@ -1,0 +1,16 @@
+spring:
+  grpc:
+    server:
+      inprocess:
+        name: test
+      port: -1
+    client:
+      channels:
+        dic-channel:
+          in-process: test
+
+telegram:
+  bot:
+    username: "TestUserName"
+    token: "TestToken"
+    webhook-url: "your_telegram_bot_webhook_url_here"

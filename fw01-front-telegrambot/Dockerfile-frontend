@@ -1,0 +1,21 @@
+# Stage 1: Build stage
+FROM maven:3.9.11-eclipse-temurin-21-alpine AS builder
+WORKDIR /build
+COPY pom.xml .
+# download necessary dependencies to a cached layer
+RUN mvn dependency:go-offline
+COPY src ./src
+# Copy certificates for build stage
+COPY src/main/resources/certificates ./certificates
+RUN mvn package
+
+# Stage 2: Runtime image creation stage, use jre as base image
+FROM bellsoft/liberica-openjre-alpine-musl:21
+# application.yml references credentials and bot properties via environment variables
+# they should be injected either at runtime (docker run -e ...) or as docker-compose/service values
+WORKDIR /app
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+COPY --from=builder --chown=appuser:appgroup /build/target/fw01-front-telegrambot-1.0.0.jar ./app-frontend.jar
+COPY --from=builder --chown=appuser:appgroup /build/certificates ./certificates
+USER appuser
+ENTRYPOINT ["java", "-jar", "app-frontend.jar"]

@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: fw01-back-mongo-reactive
+
+  data:
+    mongodb:
+      auto-index-creation: true
+      port: 27017
+      database: dic-reactive-db
+
+  grpc:
+    server:
+      port: 9090
+      ssl:
+        enabled: true
+        bundle: server-mtls
+        client-auth: require
+        secure: true
+
+  ssl:
+    bundle:
+      jks:
+        server-mtls:
+          keystore:
+            location: classpath:certificates/server.jks
+            password: ${CERTIFICATE_PASSWORD}
+            type: JKS
+          key:
+            password: ${CERTIFICATE_PASSWORD}
+          truststore: # Contains trusted client certificates
+            location: classpath:certificates/server-truststore.jks
+            password: ${CERTIFICATE_PASSWORD}
+            type: JKS
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 8.0.3
+
+mongock:
+  runner-type: InitializingBean
+  mongo-db:
+    write-concern:
+      journal: false
+    read-concern: local
+  change-logs-scan-package:
+    - ru.otus.hw.mongock
+
+  # Optional: Enable debug logging
+  logging:
+    level:
+      ru.otus.hw: INFO
+      io.grpc: DEBUG
+      org.springframework.grpc: DEBUG
+      javax.net.ssl: DEBUG

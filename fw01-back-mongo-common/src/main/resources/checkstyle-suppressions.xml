@@ -1,0 +1,14 @@
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<!-- Exclude generated mapstruct mappers, google protobuf definitions and mongock dataset and interceptors implementations -->
+<suppressions>
+    <suppress checks=".*"
+              files="[/\\]target[/\\]generated-sources[/\\]annotations[/\\]ru[/\\]otus[/\\]hw[/\\]mapper[/\\].*" />
+    <suppress checks=".*"
+              files="[/\\]target[/\\]generated-sources[/\\]protobuf[/\\].*" />
+    <suppress checks=".*"
+              files="[/\\]ru[/\\]otus[/\\]hw[/\\]mongock[/\\].*"/>
+    <suppress checks=".*"
+              files="[/\\]ru[/\\]otus[/\\]hw[/\\]interceptor[/\\]LoggingServerInterceptor.java"/>
+</suppressions>

@@ -2,10 +2,18 @@
 # =============================================
 # This file prevents accidental commit of sensitive files and build artifacts
 
-# === Maven Wrapper & Local Metadata ===
+# Maven
+# =====
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-.mvn/wrapper/maven-wrapper.properties
 
 # Environment Files (CONTAIN SECRETS!)
 # ====================================
