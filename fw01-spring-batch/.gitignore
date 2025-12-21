@@ -1,0 +1,42 @@
+# === OS / File-System Noise ===
+.DS_Store
+Thumbs.db
+$RECYCLE.BIN/
+
+# === IDE & Tooling (IntelliJ IDEA / JetBrains) ===
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# === Build Outputs (Maven / Spring Boot) ===
+target/
+*.jar
+*.jar.original
+*.war
+
+# === Maven Wrapper & Local Metadata ===
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# === Logs & Runtime Artifacts ===
+*.log
+*.exec
+
+# === Reports & Coverage (JaCoCo, Checkstyle, Surefire) ===
+target/site/
+**/jacoco.exec
+**/surefire-reports/
+**/jacoco/
+*.csv
+*.html
+*.gif
+*.css
+*.js
+
+# === Temporary / Backup Files ===
+*.tmp
+*.swp
+*~

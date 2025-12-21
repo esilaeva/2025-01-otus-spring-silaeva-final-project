@@ -1,0 +1,22 @@
+# Stage 1: Build stage
+FROM maven:3.9.11-eclipse-temurin-21-alpine AS builder
+WORKDIR /build
+COPY pom.xml .
+# download necessary dependencies to a cached layer
+RUN mvn dependency:go-offline
+COPY src ./src
+# Copy certificates for build stage
+COPY src/main/resources/certificates ./certificates
+RUN mvn package
+
+# Stage 2: Runtime image creation stage, use jre as base image
+FROM bellsoft/liberica-openjre-alpine-musl:21
+WORKDIR /app
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+# Copy JAR file and SSL certificates
+COPY --from=builder --chown=appuser:appgroup /build/target/fw01-back-mongo-reactive-1.0.0.jar ./app-backend.jar
+COPY --from=builder --chown=appuser:appgroup /build/certificates ./certificates
+# Expose gRPC port 9090
+EXPOSE 9090
+USER appuser
+ENTRYPOINT ["java", "-jar", "app-backend.jar"]

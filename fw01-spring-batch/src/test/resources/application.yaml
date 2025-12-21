@@ -1,0 +1,34 @@
+spring:
+  batch:
+    job:
+      enabled: false
+  shell:
+    interactive:
+      enabled: false
+    command:
+      version:
+        enabled: false
+
+mongock:
+  transactional: false
+  enabled: true
+  migration-scan-package: ru.otus.hw.testdb
+  track-repository: true
+  fail-fast: true
+  lock:
+    enabled: true
+    time-to-live-minutes: 5
+    acquire-lock-timeout-seconds: 60
+  change-source: class-path
+  verbosity: INFO
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 8.0.3
+
+batch:
+  input:
+    yaml:
+      path: src/test/resources/imported-concepts.yaml

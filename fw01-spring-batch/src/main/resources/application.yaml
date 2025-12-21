@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: fw01-spring-batch
+  # Primary DataSource Configuration (for Spring Batch Repository)
+  datasource:
+    url: jdbc:h2:mem:batchdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  # Spring Batch Configuration
+  batch:
+    jdbc:
+      initialize-schema: always  # Create batch tables on startup
+    job:
+      enabled: false  # Don't auto-run jobs; trigger manually via JobLauncher (using shell command)
+
+  data:
+    mongodb:
+      auto-index-creation: true
+      port: 0
+      database: dic-db
+
+  shell:
+    interactive:
+      enabled: true
+    command:
+      version:
+        enabled: false
+
+mongock:
+  runner-type: InitializingBean
+  enabled: true
+  transactional: false
+  migration-scan-package: ru.otus.hw.mongock
+  track-repository: true
+  fail-fast: true
+  lock:
+    enabled: true
+    time-to-live-minutes: 5
+    acquire-lock-timeout-seconds: 60
+  change-source: class-path
+  verbosity: INFO
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 8.0.3
+
+batch:
+  output:
+    yaml:
+      path: src/main/resources/exported-concepts.yaml
+  input:
+    yaml:
+      path: src/main/resources/imported-concepts.yaml

@@ -1,0 +1,13 @@
+mongock:
+  runner-type: InitializingBean
+  enabled: true
+  transactional: false
+  migration-scan-package: ru.otus.hw.mongock
+  track-repository: true
+  fail-fast: true
+  lock:
+    enabled: true
+    time-to-live-minutes: 5
+    acquire-lock-timeout-seconds: 60
+  change-source: class-path
+  verbosity: INFO

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "ru.otus.hw.proto";
+
+option java_outer_classname = "DicServiceProto";
+
+service DicService {
+  rpc getTopics(google.protobuf.Empty) returns (stream google.protobuf.StringValue);
+  rpc getWordPairs(google.protobuf.StringValue) returns (stream WordPair);
+  rpc getAllTopicsNumber(google.protobuf.Empty) returns (google.protobuf.Int64Value);
+}
+
+message WordPair {
+  map<string, string> wordPair = 1;
+}

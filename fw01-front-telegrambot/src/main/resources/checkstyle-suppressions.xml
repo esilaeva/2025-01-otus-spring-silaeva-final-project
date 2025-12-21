@@ -1,0 +1,10 @@
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<!-- Exclude generated Google protobuf definitions and interceptors implementation -->
+<suppressions>
+    <suppress checks=".*"
+              files="[/\\]target[/\\]generated-sources[/\\]protobuf[/\\].*" />
+    <suppress checks=".*"
+              files="[/\\]ru[/\\]otus[/\\]hw[/\\]interceptor[/\\]LoggingClientInterceptor.java" />
+</suppressions>

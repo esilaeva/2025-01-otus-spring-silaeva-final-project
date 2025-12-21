@@ -1,0 +1,31 @@
+concepts:
+  - topics:
+      - name: Поликлиника
+        description: Поликлиника - место для первичной диагностики заболеваний.
+    words:
+      - language: ru
+        text: Регистратура
+        partOfSpeech: noun
+        comment: ""
+        audioUrl: ""
+      - language: he
+        text: מזכירות
+        partOfSpeech: noun
+        comment: ""
+        audioUrl: ""
+    comment: ""
+  - topics:
+      - name: Поликлиника
+        description: Поликлиника - место для первичной диагностики заболеваний.
+    words:
+      - language: ru
+        text: Головная боль
+        partOfSpeech: noun
+        comment: ""
+        audioUrl: ""
+      - language: he
+        text: כאב ראש
+        partOfSpeech: noun
+        comment: ""
+        audioUrl: ""
+    comment: ""
